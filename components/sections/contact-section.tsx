@@ -19,7 +19,7 @@ export function ContactSection() {
 
         <div className="max-w-md mx-auto space-y-4">
           <a 
-            href="https://twitter.com/" 
+            href="https://x.com/arkan__khan_" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full"
@@ -34,7 +34,7 @@ export function ContactSection() {
           </a>
           
           <a 
-            href="mailto:your-email@example.com" 
+            href="mailto:arkankhan051@gmail.com" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full"
@@ -49,7 +49,7 @@ export function ContactSection() {
           </a>
           
           <a 
-            href="https://github.com/" 
+            href="https://github.com/Arkan-Khan" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full"
@@ -64,7 +64,7 @@ export function ContactSection() {
           </a>
           
           <a 
-            href="https://linkedin.com/" 
+            href="https://www.linkedin.com/in/arkan-khan-4b97a32b9/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full"

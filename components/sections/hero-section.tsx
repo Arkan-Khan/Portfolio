@@ -10,8 +10,8 @@ export function HeroSection() {
     <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808030_1px,transparent_1px),linear-gradient(to_bottom,#80808030_1px,transparent_1px)] bg-[size:48px_48px]" />
       
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+      <div className="container px-4 md:px-6 mx-auto">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center justify-items-center">
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
               Hi, I'm <span className="text-orange-500 dark:text-orange-400">Arkan</span>
@@ -56,9 +56,8 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: words.length * 0.1 + 1 }}
               className="mt-4 max-w-xl text-lg text-gray-600 dark:text-gray-300"
             >
-              Passionate about building modern web experiences with the MERN/PERN stack. 
-              IT student at VIT Mumbai with a knack for problem-solving and turning ideas into 
-              elegant, functional applications. Currently exploring Next.js and cloud solutions.
+              I'm a 20-year-old IT student and aspiring Full Stack Web Developer passionate about creating efficient and innovative web applications.
+              I'm Skilled in MERN and PERN stacks and am currently focused on sharpening my development skills while exploring new technologies.
             </motion.p>
 
             <div className="mt-8 flex gap-4">
@@ -86,7 +85,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center order-1 lg:order-2">
+          <div className="flex items-center justify-center order-1 lg:order-2 mt-12 sm:mt-16 md:mt-20 lg:mt-0">
             <motion.div
               className="relative"
               animate={{ y: [-20, 20, -20] }}
@@ -95,7 +94,6 @@ export function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              style={{ marginTop: '-40px' }}
             >
               <div className="relative w-60 h-60 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700"></div>
 
