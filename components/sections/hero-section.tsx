@@ -12,7 +12,6 @@ export function HeroSection() {
       
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Text Content */}
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
               Hi, I'm <span className="text-orange-500 dark:text-orange-400">Arkan</span>
@@ -36,7 +35,6 @@ export function HeroSection() {
                   )}{" "}
                 </motion.span>
               ))}
-              {/* Animated Cursor */}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1, 0] }}
@@ -51,23 +49,43 @@ export function HeroSection() {
                 |
               </motion.span>
             </div>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: words.length * 0.1 + 1 }}
+              className="mt-4 max-w-xl text-lg text-gray-600 dark:text-gray-300"
+            >
+              Passionate about building modern web experiences with the MERN/PERN stack. 
+              IT student at VIT Mumbai with a knack for problem-solving and turning ideas into 
+              elegant, functional applications. Currently exploring Next.js and cloud solutions.
+            </motion.p>
+
             <div className="mt-8 flex gap-4">
-              <Button
-                size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white"
+              <a href="#contact">
+                <Button
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white transition-colors duration-200 transform active:scale-95"
+                >
+                  Get in Touch
+                </Button>
+              </a>
+              <a 
+                href="/Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                Get in Touch
-              </Button>
-              <Button
-                size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white"
-              >
-                Get in Touch
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white transition-colors duration-200 transform active:scale-95"
+                >
+                  View Resume
+                </Button>
+              </a>
             </div>
           </div>
 
-          {/* Animated Image with Floating and Dual Border Animation */}
           <div className="flex items-center justify-center order-1 lg:order-2">
             <motion.div
               className="relative"
@@ -79,12 +97,9 @@ export function HeroSection() {
               }}
               style={{ marginTop: '-40px' }}
             >
-              {/* Base Image Container */}
               <div className="relative w-60 h-60 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700"></div>
 
-              {/* Dual Animated Borders */}
               <div className="absolute inset-0 w-60 h-60">
-                {/* First point - starting at 0deg */}
                 <motion.div
                   className="absolute w-60 h-60 rounded-full"
                   animate={{ rotate: 360 }}
@@ -98,7 +113,6 @@ export function HeroSection() {
                       'conic-gradient(from 0deg, transparent 0deg, transparent 170deg, #f97316 180deg, #ea580c 190deg, transparent 200deg, transparent 360deg)'
                   }}
                 />
-                {/* Second point - starting at 180deg, moving in same direction */}
                 <motion.div
                   className="absolute w-60 h-60 rounded-full"
                   animate={{ rotate: 360 }}
@@ -113,7 +127,6 @@ export function HeroSection() {
                   }}
                 />
 
-                {/* Inner mask layers */}
                 <div className="absolute inset-1 w-58 h-58 rounded-full bg-background" />
                 <div className="absolute inset-2 w-56 h-56 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
                   <img
