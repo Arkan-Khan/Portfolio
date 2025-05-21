@@ -33,60 +33,94 @@ const skills = [
 ];
 
 export function SkillsSection() {
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05
       }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
+
+  const mobileRows = [
+    skills.slice(0, 4),
+    skills.slice(4, 8),
+    skills.slice(8, 12),
+    skills.slice(12, 16),
+    skills.slice(16, 20)  
+  ];
 
   const firstRow = skills.slice(0, 8);
   const secondRow = skills.slice(8, 16);
   const thirdRow = skills.slice(16, 20);
 
   return (
-    <section id="skills" className="min-h-screen relative py-20">
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+    <section id="skills" className="min-h-screen relative py-10 md:py-16 lg:py-20 flex items-center">
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808030_1px,transparent_1px),linear-gradient(to_bottom,#80808030_1px,transparent_1px)] bg-[size:48px_48px]" />
       
-      <div className="container px-4 relative z-10">
+      <div className="container px-4 relative z-10 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-6 md:mb-8 lg:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 relative inline-block">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-3 relative inline-block">
             My <span className="text-orange-500 dark:text-orange-400">Skills</span>
             <motion.div 
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-orange-500 dark:bg-orange-400 rounded-full"
+              className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500 dark:bg-orange-400 rounded-full"
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 1, delay: 0.3 }}
             />
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Technologies I use to build modern web applications
           </p>
         </motion.div>
         
-        <div className="space-y-3">
+        <div className="space-y-3 md:hidden">
+          {mobileRows.map((row, rowIndex) => (
+            <motion.div 
+              key={`mobile-row-${rowIndex}`}
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+              className="grid grid-cols-4 gap-2 mx-auto"
+            >
+              {row.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  variants={item}
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="bg-white dark:bg-gray-800 rounded-lg p-2 flex flex-col items-center justify-center border border-gray-200 dark:border-gray-700 transition-all hover:shadow-md group h-20"
+                >
+                  <div className={`text-xl mb-1 ${skill.color} group-hover:scale-105 transition-transform duration-300`}>
+                    <skill.icon />
+                  </div>
+                  <h3 className="font-medium text-xs text-center line-clamp-1">{skill.name}</h3>
+                </motion.div>
+              ))}
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="hidden md:block space-y-4">
           <motion.div 
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-8 gap-3"
+            className="grid grid-cols-8 gap-4"
           >
             {firstRow.map((skill) => (
               <motion.div
@@ -108,7 +142,7 @@ export function SkillsSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-8 gap-3"
+            className="grid grid-cols-8 gap-4"
           >
             {secondRow.map((skill) => (
               <motion.div
@@ -124,15 +158,16 @@ export function SkillsSection() {
               </motion.div>
             ))}
           </motion.div>
+          
           <motion.div 
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex justify-center gap-3"
+            className="flex justify-center gap-4"
           >
             <div className="hidden sm:block w-1/4"></div>
-            <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-3 w-full sm:w-1/2">
+            <div className="grid grid-cols-4 gap-4 w-full sm:w-1/2">
               {thirdRow.map((skill) => (
                 <motion.div
                   key={skill.name}

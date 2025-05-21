@@ -6,8 +6,12 @@ import { ThemeProvider } from '@/providers/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Arkan Portfolio',
+  title: 'Arkan',
   description: 'A portfolio website built with Next.js and Tailwind CSS',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

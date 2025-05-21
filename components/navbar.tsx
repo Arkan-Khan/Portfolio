@@ -22,7 +22,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Improved rotating border animation - more controlled rotation timing
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection((prevState) => {
@@ -31,7 +30,7 @@ export function Navbar() {
         const nextIndex = (currentIndex + 1) % directions.length;
         return directions[nextIndex];
       });
-    }, 1000); // Consistent timing for smoother transitions
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,8 +41,6 @@ export function Navbar() {
     { href: '#contact', label: 'Contact' },
   ];
 
-  // Border animation glow effect directions with enhanced blue-600 color (Tailwind blue-600: #2563eb)
-  // Using a more intense blue with larger gradient spread for better visibility in both modes
   const movingMap = {
     TOP: "radial-gradient(30% 80% at 50% 0%, rgba(37, 99, 235, 1) 0%, rgba(59, 130, 246, 0.7) 50%, rgba(37, 99, 235, 0) 100%)",
     LEFT: "radial-gradient(30% 80% at 0% 50%, rgba(37, 99, 235, 1) 0%, rgba(59, 130, 246, 0.7) 50%, rgba(37, 99, 235, 0) 100%)",
@@ -51,10 +48,8 @@ export function Navbar() {
     RIGHT: "radial-gradient(30% 80% at 100% 50%, rgba(37, 99, 235, 1) 0%, rgba(59, 130, 246, 0.7) 50%, rgba(37, 99, 235, 0) 100%)",
   };
 
-  // Base highlight effect that's always active (orange)
   const highlight = "radial-gradient(75% 181.15% at 50% 50%, #F97316 0%, rgba(249, 115, 22, 0) 100%)";
-  
-  // New hover effect - more intense glow
+
   const hoverHighlight = "radial-gradient(75% 181.15% at 50% 50%, #FB923C 0%, #EA580C 50%, rgba(249, 115, 22, 0) 100%)";
 
   return (
@@ -66,7 +61,6 @@ export function Navbar() {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* Blue border animation - similar to HoverBorderGradient */}
         <motion.div
           className="absolute inset-0 rounded-full overflow-hidden"
           style={{
@@ -84,8 +78,7 @@ export function Navbar() {
             duration: 1
           }}
         />
-        
-        {/* Layer 2: Base glow effect that changes on hover */}
+
         <motion.div
           className="absolute inset-0 rounded-full overflow-hidden"
           style={{
@@ -99,14 +92,12 @@ export function Navbar() {
           }}
           transition={{ ease: "linear", duration: 0.3 }}
         />
-        
-        {/* Background with slight transparency */}
+
         <div className={cn(
           "absolute inset-[2px] rounded-full bg-background/90 dark:bg-background/80 backdrop-blur-md",
           isScrolled ? "shadow-lg" : ""
         )} />
 
-        {/* Navbar content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             <Link href="/" className="text-xl font-bold group relative">
@@ -116,7 +107,6 @@ export function Navbar() {
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-orange-700 scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 <Link
@@ -131,7 +121,6 @@ export function Navbar() {
               <ThemeToggle />
             </div>
 
-            {/* Mobile Navigation Button */}
             <div className="md:hidden flex items-center gap-2">
               <ThemeToggle />
               <Button
@@ -145,7 +134,6 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Navigation Menu */}
           {isOpen && (
             <motion.div 
               initial={{ opacity: 0, y: -10 }}
