@@ -6,7 +6,7 @@ import {
   SiReact, SiNodedotjs, SiMongodb, SiExpress, 
   SiPostgresql, SiDocker, SiAmazon, SiGit, 
   SiGithub, SiJenkins, SiPython, SiC, 
-  SiPrisma, SiPostman, SiSupabase, SiTailwindcss
+  SiPrisma, SiPostman, SiNextdotjs, SiTailwindcss 
 } from "react-icons/si";
 
 const skills = [
@@ -15,21 +15,21 @@ const skills = [
   { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400' },
   { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600' },
   { name: 'React', icon: SiReact, color: 'text-cyan-400' },
+  { name: 'Next.js', icon: SiNextdotjs, color: 'text-black dark:text-white' },
+  { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-400' },
   { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-500' },
-  { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
-  { name: 'Express', icon: SiExpress, color: 'text-gray-400' },
+  { name: 'Express', icon: SiExpress, color: 'text-black dark:text-gray-300' },
   { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+  { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
+  { name: 'Prisma', icon: SiPrisma, color: 'text-cyan-500' },
   { name: 'Docker', icon: SiDocker, color: 'text-blue-500' },
   { name: 'AWS', icon: SiAmazon, color: 'text-yellow-500' },
-  { name: 'Git', icon: SiGit, color: 'text-orange-600' },
-  { name: 'GitHub', icon: SiGithub, color: 'text-gray-100' },
   { name: 'Jenkins', icon: SiJenkins, color: 'text-red-500' },
+  { name: 'Git', icon: SiGit, color: 'text-orange-600' },
+  { name: 'GitHub', icon: SiGithub, color: 'text-black dark:text-gray-100' },
+  { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
   { name: 'Python', icon: SiPython, color: 'text-blue-500' },
   { name: 'C', icon: SiC, color: 'text-blue-400' },
-  { name: 'Prisma', icon: SiPrisma, color: 'text-cyan-500' },
-  { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
-  { name: 'Supabase', icon: SiSupabase, color: 'text-green-400' },
-  { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-400' }
 ];
 
 export function SkillsSection() {
@@ -72,7 +72,7 @@ export function SkillsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-6 md:mb-8 lg:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-3 relative inline-block">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-3 pt-3 relative inline-block">
             My <span className="text-orange-500 dark:text-orange-400">Skills</span>
             <motion.div 
               className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500 dark:bg-orange-400 rounded-full"

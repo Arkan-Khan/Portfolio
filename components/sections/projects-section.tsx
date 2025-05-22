@@ -33,7 +33,7 @@ export function ProjectsSection() {
     {
       id: 2,
       title: "Portfolio",
-      description: "My Portfolio built with NextJS, Tailwind and UI libraries like Aceternity UI and ShadCN.",
+      description: "My Portfolio built with NextJS, Tailwind and UI libraries (Aceternity UI and ShadCN).",
       image: "https://res.cloudinary.com/dewfafrzp/image/upload/v1747808933/Portfolio_uz2dvf.png",
       live: "https://arkan.zodx.tech/",
       github: "https://github.com/Arkan-Khan/Portfolio"
