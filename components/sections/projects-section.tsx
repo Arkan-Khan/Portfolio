@@ -61,15 +61,8 @@ export function ProjectsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-5 mt-14 md:mb-2 md:mt-6 lg:mt-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-5 relative inline-block">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-5">
             My <span className="text-orange-500 dark:text-orange-400">Projects</span>
-            <motion.div 
-              className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500 dark:bg-orange-400 rounded-full"
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-            />
           </h2>
           
           <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto">
